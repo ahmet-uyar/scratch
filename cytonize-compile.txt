@@ -1,0 +1,113 @@
+$ ./build.sh 
+PYTHON ENV PATH       = 
+BUILD PATH            = /home/auyar/projects/gcylon/build
+FLAG CPP BUILD        = OFF
+FLAG PYTHON BUILD     = OFF
+FLAG BUILD ALL        = OFF
+FLAG BUILD DEBUG      = OFF
+FLAG BUILD RELEASE    = OFF
+FLAG RUN CPP TEST     = OFF
+FLAG RUN PYTHON TEST  = OFF
+FLAG STYLE CHECK      = OFF
+ADDITIONAL CMAKE FLAGS= 
+Install location set to: /home/auyar/projects/gcylon/build
+Running conda build
+=================================================================
+Building Conda CPP in Release mode
+=================================================================
+SOURCE_DIR: /home/auyar/projects/gcylon/cpp
+~/projects/gcylon/build ~/projects/gcylon
+CONDA_PREFIX: /home/auyar/anaconda3/envs/cudf_dev
+CYLON_HOME: /home/auyar/projects/cylon
+CUDAToolkit_INCLUDE_DIRS: /usr/include
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/auyar/projects/gcylon/build
+Consolidate compiler generated dependencies of target gcylon
+[ 38%] Built target gcylon
+Consolidate compiler generated dependencies of target a2a_cudf_test
+Consolidate compiler generated dependencies of target shuffle_test
+Consolidate compiler generated dependencies of target cudf_test
+Consolidate compiler generated dependencies of target join_test
+[ 69%] Built target shuffle_test
+[ 69%] Built target a2a_cudf_test
+[ 84%] Built target join_test
+[100%] Built target cudf_test
+Cylon CPP Built Successfully!~/projects/gcylon
+=================================================================
+Running conda build
+=================================================================
+Building Python
+LD_LIBRARY_PATH=/home/auyar/anaconda3/envs/cudf_dev/lib:/home/auyar/projects/cylon/build/lib:/home/auyar/projects/gcylon/build/lib:/home/auyar/openmpi-4.0.1/build/lib:/home/auyar/gcc-10-2-0/lib64:
+~/projects/gcylon/python ~/projects/gcylon
+rm -rf build; rm -rf dist; rm -rf *egg-info*; rm -rf *.so;
+running install
+running bdist_egg
+running egg_info
+creating pygcylon.egg-info
+writing pygcylon.egg-info/PKG-INFO
+writing dependency_links to pygcylon.egg-info/dependency_links.txt
+writing requirements to pygcylon.egg-info/requires.txt
+writing top-level names to pygcylon.egg-info/top_level.txt
+writing manifest file 'pygcylon.egg-info/SOURCES.txt'
+reading manifest file 'pygcylon.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+writing manifest file 'pygcylon.egg-info/SOURCES.txt'
+installing library code to build/bdist.linux-x86_64/egg
+running install_lib
+running build_ext
+building 'data_type' extension
+creating build
+creating build/temp.linux-x86_64-3.7
+creating build/temp.linux-x86_64-3.7/pycylon
+gcc -pthread -B /home/auyar/anaconda3/envs/cudf_dev/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -Ipycylon -I../cpp/src/cylon/cudf -I/home/auyar/projects/cylon/cpp/src/cylon -I/home/auyar/anaconda3/envs/cudf_dev/include -I/home/auyar/anaconda3/envs/cudf_dev/lib/python3.7/site-packages/numpy/core/include -I/home/auyar/anaconda3/envs/cudf_dev/include/python3.7m -c pycylon/data_type.cpp -o build/temp.linux-x86_64-3.7/pycylon/data_type.o -I/home/auyar/openmpi-4.0.1/build/include -pthread -pthread -Wl,-rpath -Wl,/home/auyar/openmpi-4.0.1/build/lib -Wl,--enable-new-dtags -L/home/auyar/openmpi-4.0.1/build/lib -lmpi -std=c++14 -DARROW_METADATA_V4 -DNEED_EXCLUSIVE_SCAN
+cc1plus: warning: command-line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+In file included from /home/auyar/anaconda3/envs/cudf_dev/include/cudf/table/table_view.hpp:18,
+                 from pycylon/../../cpp/src/cylon/cudf/cudf_a2a.hpp:15,
+                 from pycylon/../../cpp/src/cylon/cudf/gtable.hpp:7,
+                 from pycylon/data_type.cpp:684:
+/home/auyar/anaconda3/envs/cudf_dev/include/cudf/column/column_view.hpp:291: warning: ignoring ‘#pragma nv_exec_check_disable ’ [-Wunknown-pragmas]
+  291 | #pragma nv_exec_check_disable
+      | 
+/home/auyar/anaconda3/envs/cudf_dev/include/cudf/column/column_view.hpp:293: warning: ignoring ‘#pragma nv_exec_check_disable ’ [-Wunknown-pragmas]
+  293 | #pragma nv_exec_check_disable
+      | 
+creating build/lib.linux-x86_64-3.7
+g++ -pthread -shared -B /home/auyar/anaconda3/envs/cudf_dev/compiler_compat -L/home/auyar/anaconda3/envs/cudf_dev/lib -Wl,-rpath=/home/auyar/anaconda3/envs/cudf_dev/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-x86_64-3.7/pycylon/data_type.o -L/home/auyar/projects/gcylon/build/lib -L/home/auyar/projects/cylon/build/lib -L/home/auyar/anaconda3/envs/cudf_dev/lib/python3.7/site-packages -L/home/auyar/anaconda3/envs/cudf_dev/lib -lgcylon -lcylon -o build/lib.linux-x86_64-3.7/data_type.cpython-37m-x86_64-linux-gnu.so -pthread -Wl,-rpath -Wl,/home/auyar/openmpi-4.0.1/build/lib -Wl,--enable-new-dtags -L/home/auyar/openmpi-4.0.1/build/lib -lmpi -Wl,-rpath
+creating build/bdist.linux-x86_64
+creating build/bdist.linux-x86_64/egg
+copying build/lib.linux-x86_64-3.7/data_type.cpython-37m-x86_64-linux-gnu.so -> build/bdist.linux-x86_64/egg
+creating stub loader for data_type.cpython-37m-x86_64-linux-gnu.so
+byte-compiling build/bdist.linux-x86_64/egg/data_type.py to data_type.cpython-37.pyc
+creating build/bdist.linux-x86_64/egg/EGG-INFO
+copying pygcylon.egg-info/PKG-INFO -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying pygcylon.egg-info/SOURCES.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying pygcylon.egg-info/dependency_links.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying pygcylon.egg-info/not-zip-safe -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying pygcylon.egg-info/requires.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying pygcylon.egg-info/top_level.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+writing build/bdist.linux-x86_64/egg/EGG-INFO/native_libs.txt
+creating dist
+creating 'dist/pygcylon-0+untagged.10.gbaa8e18.dirty-py3.7-linux-x86_64.egg' and adding 'build/bdist.linux-x86_64/egg' to it
+removing 'build/bdist.linux-x86_64/egg' (and everything under it)
+Processing pygcylon-0+untagged.10.gbaa8e18.dirty-py3.7-linux-x86_64.egg
+removing '/home/auyar/anaconda3/envs/cudf_dev/lib/python3.7/site-packages/pygcylon-0+untagged.10.gbaa8e18.dirty-py3.7-linux-x86_64.egg' (and everything under it)
+creating /home/auyar/anaconda3/envs/cudf_dev/lib/python3.7/site-packages/pygcylon-0+untagged.10.gbaa8e18.dirty-py3.7-linux-x86_64.egg
+Extracting pygcylon-0+untagged.10.gbaa8e18.dirty-py3.7-linux-x86_64.egg to /home/auyar/anaconda3/envs/cudf_dev/lib/python3.7/site-packages
+pygcylon 0+untagged.10.gbaa8e18.dirty is already the active version in easy-install.pth
+
+Installed /home/auyar/anaconda3/envs/cudf_dev/lib/python3.7/site-packages/pygcylon-0+untagged.10.gbaa8e18.dirty-py3.7-linux-x86_64.egg
+Processing dependencies for pygcylon==0+untagged.10.gbaa8e18.dirty
+Searching for Cython==0.29.21
+Best match: Cython 0.29.21
+Adding Cython 0.29.21 to easy-install.pth file
+Installing cygdb script to /home/auyar/anaconda3/envs/cudf_dev/bin
+Installing cython script to /home/auyar/anaconda3/envs/cudf_dev/bin
+Installing cythonize script to /home/auyar/anaconda3/envs/cudf_dev/bin
+
+Using /home/auyar/anaconda3/envs/cudf_dev/lib/python3.7/site-packages
+Finished processing dependencies for pygcylon==0+untagged.10.gbaa8e18.dirty
+~/projects/gcylon
+=================================================================
+(cudf_dev) auyar@auwork:~/projects/gcylon$ 
+
